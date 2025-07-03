@@ -1,4 +1,4 @@
-# ¿Cómo puedo trackear los eventos de ecommerce de mi tienda en Shopify?
+# ¿Cómo puedo trackear los eventos de ecommerce de mi tienda en Shopify en GA4?
 
 ## 1) Conexión directa con GA4
 A través de la app oficial de Shopify llamada Google & YouTube (desarrollada por Google), puedes Conectar tu tienda con Google Analytics 4 (con una cuenta de google)
