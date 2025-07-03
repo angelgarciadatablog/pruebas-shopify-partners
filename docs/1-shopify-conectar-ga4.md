@@ -107,5 +107,7 @@ Depende del evento, pero en general puedes capturar:
 - Cuando prefieres mantener todo dentro del entorno nativo de Shopify sin depender de terceros
 
 
+[Ver código conexion-GA4](./scripts/ga4-tracking-shopify.js)
+
 
 
