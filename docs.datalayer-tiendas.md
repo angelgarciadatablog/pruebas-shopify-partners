@@ -1,6 +1,6 @@
 # ¿Todas las plataformas de ecommerce envían dataLayer? 
 
-Comparación práctica entre las principales plataformas de eCommerce, enfocada especialmente en cómo se configura el `dataLayer` para Google Tag Manager (GTM) y el seguimiento con GA4 u otras herramientas. 
+No, no todas las plataformas de eCommerce envían un dataLayer de forma nativa. Algunas como VTEX o Magento lo incluyen por defecto, mientras que otras como Shopify o PrestaShop requieren configuración manual o el uso de aplicaciones externas. La siguiente tabla compara las principales plataformas según su compatibilidad con dataLayer, la facilidad de integración con Google Tag Manager (GTM) y si requieren herramientas adicionales para lograr un seguimiento completo.
 
 
 | Plataforma           | ¿DataLayer nativo? | Nivel de dificultad   | ¿Permite GTM? | ¿Necesita apps o plugins?         | Observaciones clave                                                                 |
