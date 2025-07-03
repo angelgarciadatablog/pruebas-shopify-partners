@@ -11,8 +11,8 @@ y enviar eventos básicos como:
 - begin_checkout
 - purchase
 
-*Al realizar la conexión te pide identificarte con una cuenta de google 
-*Al principio hay una serie de pasos que debes cumplir como (tener un métdo de pago activo, política de reembolsos, información de contacto, etc), pero hay una opción al lado derecho para solo configurar GA4  
+*Al realizar la conexión te pide identificarte con una cuenta de google.   
+*Al principio hay una serie de pasos que debes cumplir como (tener un métdo de pago activo, política de reembolsos, información de contacto, etc), pero hay una opción al lado derecho para solo configurar GA4.  
 *La conexión requiere que te conectes a una cuenta de Google Merchant Center (en caso no tengas, te permite crearla desde allí) 
 *Shopify te mostrará las cuentas de GA4 disponibles en la cuenta de google para conectar la tienda, lo más recomendable es crear una cuenta desde cero en GA4
 
