@@ -1,4 +1,4 @@
-# ¿Cómo puedo trackear los eventos de ecommerce de mi tienda en Shopify en GA4?
+# Cómo trackear eventos de ecommerce en Shopify con Google Analytics 4 (GA4)
 
 ## 1) Conexión directa con GA4
 ![Conexión directa con GA4](../images/opcion1.png)
