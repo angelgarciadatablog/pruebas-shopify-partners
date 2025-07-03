@@ -1,6 +1,7 @@
 # ¿Cómo puedo trackear los eventos de ecommerce de mi tienda en Shopify en GA4?
 
 ## 1) Conexión directa con GA4
+![Conexión directa con GA4](../images/opcion1.png)
 A través de la app oficial de Shopify llamada Google & YouTube (desarrollada por Google), puedes Conectar tu tienda con Google Analytics 4 (con una cuenta de google)
 Enviar eventos básicos como:
 
@@ -43,7 +44,9 @@ Pero si necesitas análisis más avanzados, remarketing, conversiones multicanal
 
 
 
+
 ## 2) Conexión a GA4 con código personalizado (sin GTM)
+![Conexión directa con GA4](../images/opcion2.png)
 Si bien la conexión directa con GA4 es suficiente para muchas tiendas, existe una alternativa más flexible y potente: crear un píxel personalizado desde el editor de eventos de Shopify para capturar eventos de ecommerce usando la API de cliente analytics.subscribe().
 Esta técnica permite enviar eventos directamente a Google Analytics 4 utilizando gtag(), sin necesidad de editar el código del tema ni instalar Google Tag Manager.
 
