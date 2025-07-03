@@ -3,7 +3,7 @@
 ## 1) Conexión directa con GA4
 ![Conexión directa con GA4](../images/opcion1.png)
 A través de la app oficial de Shopify llamada Google & YouTube (desarrollada por Google), puedes Conectar tu tienda con Google Analytics 4 (con una cuenta de google)
-Enviar eventos básicos como:
+y enviar eventos básicos como:
 
 - page_view
 - view_item
