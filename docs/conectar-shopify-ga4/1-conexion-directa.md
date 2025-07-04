@@ -41,6 +41,6 @@ Esto significa que puedes analizar en GA4 qué productos fueron vistos, agregado
 Úsala si quieres una integración rápida y sin complicaciones con GA4
 Pero si necesitas análisis más avanzados, remarketing, conversiones multicanal, o usar múltiples píxeles, entonces es mejor configurar Google Tag Manager con un dataLayer personalizado.
 
-### Importante
+### 🚨Importante
 Al ctivar esta opción se crea en automático el datalayer del producto, es decir, si quiere usar otra propiedad de GA4 con google tag manager vas a necesitar que shopify envie los datos de producto en el datalayer, sin embargo, shopify no lo hace por defecto, pero al activar esta app, se crea el datalayer con los eventos principales de ecommerce para poder probarlo en Google Tag Manager.
 
