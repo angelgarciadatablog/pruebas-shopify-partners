@@ -12,7 +12,7 @@
 ## 🧪 Para qué lo estoy usando
 
 - ✅ Crear una tienda de desarrollo para pruebas personales  
-- ✅ Generar órdenes de prueba  
+- ✅ Conectar la tienda con GA4 por medio de GTM y gtag.js
 - ✅ Usar la API REST para consultar pedidos y productos desde Python  
 - ✅ Documentar todo el proceso en este repositorio  
 
