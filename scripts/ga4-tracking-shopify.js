@@ -1,4 +1,11 @@
 
+// 📦 Conexión personalizada de eventos de ecommerce desde Shopify a GA4 con gtag.js 
+// Este script captura eventos de comercio electrónico en Shopify como vistas de producto,
+// adiciones al carrito, inicio de checkout, información de pago y compras completadas.
+// Los eventos se envían directamente a una propiedad específica de Google Analytics 4 utilizando gtag.js, 
+// sin necesidad de Google Tag Manager.
+
+
 // Cargar la biblioteca de gtag.js
 //console.log("Cargando script de GTM");
 const script = document.createElement('script');
