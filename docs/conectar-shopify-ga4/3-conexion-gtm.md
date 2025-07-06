@@ -28,6 +28,6 @@ Si previamente no has conectado la aplicación "google & youtube" en tu tienda, 
 
 
 ### Solución alternativa para medir el evento de purchase desde GTM para enviarlo a GA4
-No es recomendable usar esta opción, es preferible medir el purchase con la propiedad de GA4 conectada con la aplicación de "google y youtube" o con la propiedad que recibía eventos desde un código personalizado (client_events) (pixel personalizado). Debido a que ambas se recibe el evento de una manera más directa.
+No es recomendable usar esta opción, es preferible medir el purchase con la propiedad de GA4 conectada con la aplicación de "google y youtube" o con la propiedad que recibía eventos desde un código personalizado (client_events) (pixel personalizado). Debido a que ambas se recibe el evento de una manera más directa.  
 Esta es solo una alternativa para practicar GTM -> Revisar la solución prupuesta:
 
