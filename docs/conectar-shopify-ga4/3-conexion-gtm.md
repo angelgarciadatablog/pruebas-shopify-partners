@@ -2,9 +2,7 @@
 
 ## 3) Conexión a GA4 usando Google Tag Manager (GTM)
 
-
-Conectar una tienda de shopify con Google Tag Manager (GTM) requiere que se inserte dos códigos de seguimiento (brindado por la cuenta de GTM) en la web, en el caso de shopify, se tiene que insertar en la parte de theme liquid, en la etiqueta <head> y la etiqueta <body>
-
+Conectar una tienda de Shopify con Google Tag Manager (GTM) requiere insertar dos fragmentos de código generados por tu cuenta de GTM dentro del tema de tu tienda. Específicamente, uno va dentro de la etiqueta <head> y otro dentro de la etiqueta <body> del archivo theme.liquid.
 
 ### ¿Qué necesitas?
 - Una cuenta activa de GA4 (google analytics 4)
@@ -12,22 +10,51 @@ Conectar una tienda de shopify con Google Tag Manager (GTM) requiere que se inse
 - Acceso al editor del tema en tu tienda de Shopify
 
 ### ¿Cómo funciona?
-Ese código va a trackear los eventos del sitio web en la plataforma de GTM y luego serán enviados a GA4 por medio de etiquetas (que se convertirán en eventos)
+Una vez instalados los códigos, GTM podrá capturar los eventos del sitio web y podrá gestionarlos mediante etiquetas. Estas etiquetas enviarán los datos como eventos hacia GA4.
 
-### Requerimientos
-Para poder trackear eventos de ecommerce vas a necesitar conectar la aplicación "google & youtube", sin embargo, esta conección te va a pedir una propiedad de google analytics 4 para enviar los eventos de ecommerce.   
-**Se recomienda tener una propiedad de GA4 (propiedad 1 - GXXXXX1) para recibir los eventos automáticos de ecommerce y otra propiedad aparte de GA4 (propiedad 2 - (GXXXXX2) para recibir los eventos creados desde GTM). Esto es para evitar que se dupliquen los eventos en una sola propiedad de GA4.**
+### Recomendación para evitar duplicación de eventos
+Para capturar eventos de ecommerce, es necesario instalar la aplicación Google & YouTube en tu tienda de Shopify. Esta app te pedirá vincular una propiedad de GA4 para enviar los eventos automáticamente.
+
+Se recomienda usar dos propiedades de GA4:
+
+- Propiedad 1 (G-XXXXXXX1): conectada a la app Google & YouTube para recibir los eventos automáticos de ecommerce.
+- Propiedad 2 (G-XXXXXXX2): configurada desde GTM para recibir eventos personalizados.
+
+Esto evita que se dupliquen eventos en una sola propiedad.
 
 
-### ¿Qué eventos puedes capturar?
-Si previamente no has conectado la aplicación "google & youtube" en tu tienda, no podras capturar eventos de ecommerce y solo te limitarás a recibir eventos básicos como vistas de páginas, clicks, entre otroas.
+### ¿Qué eventos puedes capturar desde GTM?
+Si no has instalado la app Google & YouTube, solo podrás capturar eventos básicos como:
+
+- Vistas de página
+- Clics en botones
+- Scrolls
 
 
 ### Limitaciones
-**Solo puedes capturar eventos hasta antes de la página del checkout, es decir, no se puede medir el mismo checkout ni purchase desde desde GTM directamente**
+**⚠️ No es posible medir eventos dentro del checkout ni el evento de "purchase" directamente desde GTM en tiendas Shopify.**
+Esto se debe a que Shopify restringe el acceso al entorno del checkout en planes que no son Shopify Plus.
 
 
-### Solución alternativa para medir el evento de purchase desde GTM para enviarlo a GA4
-No es recomendable usar esta opción, es preferible medir el purchase con la propiedad de GA4 conectada con la aplicación de "google y youtube" o con la propiedad que recibía eventos desde un código personalizado (client_events) (pixel personalizado). Debido a que ambas se recibe el evento de una manera más directa.  
-Esta es solo una alternativa para practicar GTM -> Revisar la solución prupuesta:
+### ¿Existe alguna solución alternativa?
+Sí. Aunque no es la opción más recomendable, existe una forma de enviar el evento de "purchase" desde GTM creando un píxel personalizado mediante client events en Shopify e insertando un snippet en el theme.liquid del tema.
+
+La idea consiste en construir manualmente el objeto de compra (payload) y guardarlo en el localStorage bajo la clave "lastPurchase" (esto lo realiza el píxel personalziado). Luego, un fragmento de código (***snippet***) insertado en ```theme.liquid``` se ejecuta en cualquier página donde GTM esté activo y realiza lo siguiente:
+
+  - Revisa si hay un "lastPurchase" en localStorage.
+  - Si lo encuentra, lo empuja al dataLayer.
+  - Finalmente, lo elimina del localStorage para evitar duplicaciones.
+
+Requisitos para implementar esta solución:
+  - Crear un píxel personalizado mediante client events en Shopify.
+  - Crear e insertar un snippet en el archivo theme.liquid de tu tienda.
+
+### Sin embargo, se recomienda usar:
+
+- La propiedad conectada con la app Google & YouTube
+- O la propiedad que recibe eventos mediante código personalizado (client_events o píxeles manuales)
+
+Ambas opciones ofrecen una forma más directa y confiable de medir la conversión.
+
+
 
