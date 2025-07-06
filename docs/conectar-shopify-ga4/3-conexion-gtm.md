@@ -1,6 +1,7 @@
 # ¿Cómo trackear eventos de ecommerce en Shopify con Google Analytics 4 (GA4)? - OPCION 3
 
 ## 3) Conexión a GA4 usando Google Tag Manager (GTM)
+![Conexión directa con GA4](../../images/opcion3.png)
 
 Conectar una tienda de Shopify con Google Tag Manager (GTM) requiere insertar dos fragmentos de código generados por tu cuenta de GTM dentro del tema de tu tienda. Específicamente, uno va dentro de la etiqueta <head> y otro dentro de la etiqueta <body> del archivo theme.liquid.
 
@@ -29,6 +30,10 @@ Si no has instalado la app Google & YouTube, solo podrás capturar eventos bási
 - Vistas de página
 - Clics en botones
 - Scrolls
+
+Si previamente has instalado la app Google & YouTube, podrás capturar algunos eventos de ecommerce como:
+- View item
+- Add to cart
 
 
 ### Limitaciones
