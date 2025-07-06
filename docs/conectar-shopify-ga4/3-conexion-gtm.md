@@ -39,7 +39,7 @@ Esto se debe a que Shopify restringe el acceso al entorno del checkout en planes
 ### ¿Existe alguna solución alternativa?
 Sí. Aunque no es la opción más recomendable, existe una forma de enviar el evento de "purchase" desde GTM creando un píxel personalizado mediante client events en Shopify e insertando un snippet en el theme.liquid del tema.
 
-La idea consiste en construir manualmente el objeto de compra (payload) y guardarlo en el localStorage bajo la clave "lastPurchase" (esto lo realiza el píxel personalziado). Luego, un fragmento de código (***snippet***) insertado en ```theme.liquid``` se ejecuta en cualquier página donde GTM esté activo y realiza lo siguiente:
+La idea consiste en construir manualmente el objeto de compra (payload) y guardarlo en el localStorage bajo la clave "lastPurchase" (esto lo realiza el píxel personalizado). Luego, un fragmento de código (***snippet***) insertado en ```theme.liquid``` se ejecuta en cualquier página donde GTM esté activo y realiza lo siguiente:
 
   - Revisa si hay un "lastPurchase" en localStorage.
   - Si lo encuentra, lo empuja al dataLayer.
