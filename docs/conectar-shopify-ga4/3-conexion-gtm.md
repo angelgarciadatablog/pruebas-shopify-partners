@@ -52,7 +52,7 @@ La idea consiste en construir manualmente el objeto de compra (payload) y guarda
 
 Requisitos para implementar esta solución:
   - Crear un **píxel personalizado** mediante client events en Shopify que guarde la compra en localStorage. [Ver código](../../scripts/purchase-local-storage.js)
-  - Crear e insertar un ***snippet*** en el archivo ```theme.liquid``` de tu tienda que envié esa compra a GTM. [Ver código](../../scripts/snippet-push-purchase-event.js)
+  - Crear e inserta un ***snippet*** en el archivo ```theme.liquid``` de tu tienda que envié esa compra a GTM. [Ver código](../../scripts/snippet-push-purchase-event.js)
 
 Esta solución permite llevar el evento de purchase desde la thank you page hasta GTM, sin embargo, para que GTM pueda reconocer el evento "purchase", el usuario tiene que navegar en la web después de haber realizado una compra. En ese sentido, el purchase puede llegar con retraso a GTM. 
 
