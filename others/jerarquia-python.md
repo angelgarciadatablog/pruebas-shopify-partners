@@ -30,22 +30,16 @@ Si estás dentro de un entorno virtual, se instalan solo en ese entorno. (Esto e
 | 3  | matplotlib               | Gráficos básicos (líneas, barras, áreas, etc.).                                  |
 | 4  | seaborn                 | Visualización estadística elegante y avanzada.                                  |
 | 5  | plotly                   | Visualizaciones interactivas (útil para dashboards).                            |
-| 6  | scikit-learn            | Machine Learning tradicional (clasificación, regresión, clustering).            |
-| 7  | statsmodels             | Análisis estadístico, modelos y pruebas de hipótesis.                           |
-| 8  | requests                | 📌 Para hacer solicitudes HTTP, como a la API de Shopify.             |
-| 9  | python-dotenv          | 📌 Para cargar variables desde un archivo `.env`.                      |
-| 10 | os                      | 📌 Acceso al sistema operativo: rutas, variables, entorno, etc.  (no se installa, viene incluído con pyhton      |
-| 11 | google-cloud-bigquery  | Cliente oficial para conectarse y consultar BigQuery desde Python.              |
-| 12 | pandas-gbq             | Permite leer y escribir datos entre pandas y BigQuery fácilmente.               |
-| 13 | sqlalchemy              | Conexión a bases de datos SQL mediante un ORM flexible.                         |
-| 14 | pyarrow                 | Lectura/escritura de formatos columnares (usado en BigQuery y Parquet).         |
-| 15 | jupyter                 | Ejecutar y editar notebooks interactivos en el navegador.                       |
-
 
 ---
 
 # Paquetes y subpaquetes
-Un paquete es una carpeta que contiene uno o más módulos, y permite organizar el código de forma jerárquica. Para que una carpeta se considere un paquete, debe contener un archivo especial llamado __init__.py (aunque puede estar vacío).
+Un paquete es una carpeta que contiene uno o más módulos, y permite organizar el código de forma jerárquica. Para que una carpeta se considere un paquete, debe contener un archivo especial llamado __init__.py (aunque puede estar vacío) (desde Python 3.3+ los archivos __init__.py son opcionales para que una carpeta sea reconocida como paquete)
+
+
+# Módulos
+Un módulo es un archivo de Python (con extensión .py) que contiene código Python reutilizable: funciones, clases, variables y/o código ejecutable.
+
 
 
 ejemplo - paquete principal
@@ -172,7 +166,7 @@ from matplotlib import pyplot as plt
 
 
 
-ejemplo 5 - plotly
+## ejemplo 5 - plotly
 ```
 plotly (Librería)
  └── plotly (Paquete principal)
@@ -194,8 +188,6 @@ plotly (Librería)
 import plotly.express as px
 ```
 
-
-
 ---
 
 ## ¿Cómo se usa?
@@ -211,30 +203,30 @@ Se utiliza **from** para importar algo específico (puede ser paquete, módulo, 
 | 3   | matplotlib             | ✅ Sí (muchos)       | ❌ No, se importa solo lo necesario                  | `from matplotlib import pyplot as plt`             |
 | 4   | seaborn                | ✅ Sí                | ✅ Sí                                                | `import seaborn as sns`                            |
 | 5   | plotly                 | ✅ Sí (muchos)       | ❌ No, se importa por partes                        | `import plotly.express as px`                      |
-| 6   | scikit-learn           | ✅ Sí (muchos)       | ❌ No, se importa por partes                        | `from sklearn.linear_model import LogisticRegression` |
-| 7   | statsmodels            | ✅ Sí (muchos)       | ❌ No, se importa según necesidad                   | `from statsmodels.tsa.api import ExponentialSmoothing` |
-| 8   | requests               | ❌ No (solo un paquete) | ✅ Sí                                             | `import requests`                                  |
-| 9   | python-dotenv          | ❌ No (solo `dotenv`) | ✅ Sí, o solo función específica                    | `from dotenv import load_dotenv`                   |
-| 10  | os (standard library)  | ❌ No (es un módulo) | ✅ Sí                                                | `import os`                                        |
-| 11  | google-cloud-bigquery  | ✅ Sí (subpaquetes)  | ❌ No, se importa el cliente específico              | `from google.cloud import bigquery`                |
-| 12  | pandas-gbq             | ✅ Sí                | ✅ Sí                                                | `import pandas_gbq`                                |
-| 13  | SQLAlchemy             | ✅ Sí                | ✅ o parcial, depende del caso                      | `from sqlalchemy import create_engine`             |
-| 14  | pyarrow                | ✅ Sí                | ✅ o parcial                                        | `import pyarrow.parquet as pq`                     |
-| 15  | jupyter                | ✅ Sí (muchos)       | ⚠️ Generalmente no se importa manualmente            | (se ejecuta como entorno, no se importa en código) |
 
 
-## Consideraciones
+
+## Buenas prácticas al importar
+
+- Usa alias (`as`) para facilitar la lectura si el nombre del paquete es largo o muy usado (ej: `import pandas as pd`)
+- Importa solo lo que necesitas (`from X import Y`) si no usarás todo el paquete.
+- Evita usar `from X import *`, ya que puede generar conflictos de nombres.
+
+
+
+
+## Consideraciones extras
 - Cuando llamas a una librería como pandas, numpy o seaborn (que tiene subpaquetes) no se necesita nombrar el subpaquete de la función que estás ejecutando
   ```python
   import pandas as pd #aquí se está importando toda la librería de pandas
   pd.read_csv() #aquí solo se llama a libreria.función
   ```
   
-- Cuando llamas a una librería como matplotlib (que también tiene subpaquetes) si se necesita nombrar el subpaquete
+- Cuando llamas a una librería como matplotlib (que también tiene subpaquetes) si se necesita nombrar el subpaquete 
   ```python
   from matplotlib import pyplot as plt #aquí se está importando solo el subpaquete pyplot con el alias plt 
   plt.plot() #aquí se llama a subpaquete.función
   ```
 
-## ¿Para qué se usan?
+
 
